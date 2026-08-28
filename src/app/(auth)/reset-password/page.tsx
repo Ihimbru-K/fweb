@@ -3,18 +3,15 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, EyeOff, Languages, Mail } from "lucide-react";
+import { Languages, Mail } from "lucide-react";
 
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
-import { PhoneInput } from "@/components/PhoneInput";
 
 import loginImage from "../../../../public/images/auth/login.svg";
 
-export default function LoginPage() {
-  const [showPassword, setShowPassword] = React.useState(false);
-  const [phoneNumber, setPhoneNumber] = React.useState("");
-  const [password, setPassword] = React.useState("");
+export default function ResetPasswordPage() {
+    const [phoneNumber, setPhoneNumber] = React.useState("");
 
   return (
     <div className="flex min-h-screen p-4">
@@ -78,7 +75,7 @@ export default function LoginPage() {
 
         {/* Illustration */}
         <div className="w-full max-w-3xl">
-          <Image src={loginImage} width={1000} height={500} alt="Login Illustration" className="w-full h-auto" />
+          <Image src={loginImage} width={1000} height={500} alt="Reset Password Illustration" className="w-full h-auto" />
         </div>
 
         {/* Bottom text + dots */}
@@ -114,11 +111,11 @@ export default function LoginPage() {
         {/* Form area */}
         <div className="flex flex-1 flex-col justify-center px-8 lg:px-16">
           <div className="mx-auto w-full max-w-xl">
-            <h1 className="mb-2 text-center text-xl md:text-h4 font-bold text-text-black lg:text-h3">
-              Login To Your Account
+            <h1 className="mb-2 text-center text-xl md:text-h4 font-medium text-text-black lg:text-h3">
+              Forget Your Password?
             </h1>
             <p className="mb-10 text-center text-body-md text-text-placeholder">
-              Enter your phone number and password to login
+             No Worries, We'll Send You Reset Instructions
             </p>
 
             <form
@@ -138,48 +135,24 @@ export default function LoginPage() {
                 size="lg"
               />
 
-              {/* Password */}
-              <Input
-                label="Password"
-                placeholder="••••••••••••••••"
-                type={showPassword ? "text" : "password"}
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                size="lg"
-                rightIcon={
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword((v) => !v)}
-                    className="text-gray-500 hover:text-gray-700"
-                    aria-label={showPassword ? "Hide password" : "Show password"}
-                  >
-                    {showPassword ? (
-                      <EyeOff className="h-4 w-4" />
-                    ) : (
-                      <Eye className="h-4 w-4" />
-                    )}
-                  </button>
-                }
-              />
-
-              {/* Login button */}
+              {/* Send Reset Link button */}
               <Button
                 type="submit"
                 color="primary"
                 size="lg"
                 className="mt-2 w-full"
               >
-                Login
+                Reset Password
               </Button>
 
-              {/* Create account link */}
+              {/* Back to login link */}
               <p className="text-center text-body-sm text-text-subtitle">
-                Don&apos;t have an account?{" "}
+                Have an account?{" "}
                 <Link
-                  href="/register"
+                  href="/login"
                   className="font-medium text-blue-600 underline underline-offset-2 hover:text-blue-700"
                 >
-                  Create Account
+                  Sign in
                 </Link>
               </p>
             </form>
