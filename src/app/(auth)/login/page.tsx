@@ -21,22 +21,27 @@ export default function LoginPage() {
       {/* ── Left Panel (hidden on mobile) ─────────────────────────── */}
       <div className="relative hidden w-1/2 overflow-hidden items-center justify-center lg:flex rounded-2xl">
         {/* Decorations */}
-        <Image
-          src="/images/auth/tl_auth_deco.svg"
-          alt=""
-          width={280}
-          height={280}
-          className="pointer-events-none absolute left-0 top-0 z-2"
-          priority
-        />
-        <Image
-          src="/images/auth/br_auth_deco.svg"
-          alt=""
-          width={280}
-          height={280}
-          className="pointer-events-none absolute bottom-0 right-0 z-2"
-          priority
-        />
+        <div className="pointer-events-none absolute left-0 top-0 z-2 lg:w-[230px] 2xl:w-[280px]">
+          <Image
+            src="/images/auth/tl_auth_deco.svg"
+            alt=""
+            width={280}
+            height={280}
+            className="w-full h-auto"
+            priority
+          />
+        </div>
+        
+        <div className="pointer-events-none absolute right-0 bottom-0 z-2 lg:w-[230px] 2xl:w-[280px]" >
+          <Image
+            src="/images/auth/br_auth_deco.svg"
+            alt=""
+            width={280}
+            height={280}
+            className="w-full h-auto"
+            priority
+          />         
+        </div>
 
         {/* Logo */}
         <div className="absolute left-10 top-8 z-10">
@@ -77,12 +82,12 @@ export default function LoginPage() {
         </div>
 
         {/* Illustration */}
-        <div className="w-full max-w-3xl">
+        <div className="w-full max-w-4xl px-8">
           <Image src={loginImage} width={1000} height={500} alt="Login Illustration" className="w-full h-auto" />
         </div>
 
         {/* Bottom text + dots */}
-        <div className="absolute bottom-10 left-10 right-0 z-10 px-10 py-5 backdrop-blur-md w-[760px] bg-gradient-to-r from-transparent  to-black/5 rounded-2xl">
+        <div className="absolute bottom-10 left-10 right-10 z-10 px-10 py-5 xl:max-w-2xl 2xl:max-w-3xl backdrop-blur-md bg-gradient-to-r from-transparent to-black/5 rounded-2xl">
           <h2 className="mb-2 text-h5 font-bold text-body-lg text-text-dark">
             Run Your Business Smarter
           </h2>
