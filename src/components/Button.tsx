@@ -63,7 +63,7 @@ const colorStyles: Record<ButtonColor, Record<ButtonVariant, string>> = {
   },
   primary: {
     solid:
-      "bg-primary-600 text-white hover:bg-primary-700 active:bg-primary-800",
+      "bg-primary-400 text-white hover:bg-primary-500 active:bg-primary-600",
     outline:
       "border border-primary-600 text-primary-700 bg-white hover:bg-primary-50",
     ghost: "text-primary-700 bg-transparent hover:bg-primary-50",

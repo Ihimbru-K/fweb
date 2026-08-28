@@ -3,9 +3,12 @@
 import * as React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Eye, EyeOff, Globe, Mail } from "lucide-react";
+import { Eye, EyeOff, Languages, Mail } from "lucide-react";
+
 import { Button } from "@/components/Button";
 import { Input } from "@/components/Input";
+
+import loginImage from "../../../../public/images/auth/login.svg";
 
 export default function LoginPage() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -13,16 +16,16 @@ export default function LoginPage() {
   const [password, setPassword] = React.useState("");
 
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen p-4">
       {/* ── Left Panel (hidden on mobile) ─────────────────────────── */}
-      <div className="relative hidden w-1/2 overflow-hidden bg-base-dark lg:flex">
+      <div className="relative hidden w-1/2 overflow-hidden items-center justify-center lg:flex rounded-2xl">
         {/* Decorations */}
         <Image
           src="/images/auth/tl_auth_deco.svg"
           alt=""
           width={280}
           height={280}
-          className="pointer-events-none absolute left-0 top-0 z-0"
+          className="pointer-events-none absolute left-0 top-0 z-2"
           priority
         />
         <Image
@@ -30,7 +33,7 @@ export default function LoginPage() {
           alt=""
           width={280}
           height={280}
-          className="pointer-events-none absolute bottom-0 right-0 z-0"
+          className="pointer-events-none absolute bottom-0 right-0 z-2"
           priority
         />
 
@@ -51,7 +54,7 @@ export default function LoginPage() {
             {[1, 2, 3].map((i) => (
               <div
                 key={i}
-                className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-base-dark"
+                className="relative h-10 w-10 overflow-hidden rounded-full border-2 border-base"
               >
                 <Image
                   src={`/images/person${i === 1 ? "" : i}.png`}
@@ -63,7 +66,7 @@ export default function LoginPage() {
             ))}
           </div>
           <div>
-            <p className="text-body-sm font-semibold text-text-white">
+            <p className="text-body-sm font-semibold text-text-dark">
               Join With 20k+ Users!
             </p>
             <p className="text-body-xs text-gray-400">
@@ -73,30 +76,23 @@ export default function LoginPage() {
         </div>
 
         {/* Illustration */}
-        <div className="absolute bottom-36 left-1/2 z-10 w-full max-w-md -translate-x-1/2">
-          <Image
-            src="/images/auth/login.svg"
-            alt="Illustration"
-            width={420}
-            height={340}
-            className="mx-auto"
-            priority
-          />
+        <div className="w-full max-w-3xl">
+          <Image src={loginImage} width={1000} height={500} alt="Login Illustration" className="w-full h-auto" />
         </div>
 
         {/* Bottom text + dots */}
-        <div className="absolute bottom-10 left-0 right-0 z-10 px-10">
-          <h2 className="mb-2 text-h5 font-bold text-text-white">
+        <div className="absolute bottom-10 left-10 right-0 z-10 px-10 py-5 backdrop-blur-md w-[760px] bg-gradient-to-r from-transparent  to-black/5 rounded-2xl">
+          <h2 className="mb-2 text-h5 font-bold text-body-lg text-text-dark">
             Run Your Business Smarter
           </h2>
-          <p className="mb-5 max-w-sm text-body-sm text-gray-400">
+          <p className="mb-5 max-w-lg  text-body-md text-dark">
             Manage Sales, Orders, Bookings, Payments, Inventory, And Customers
             From One Simple Platform.
           </p>
-          <div className="flex gap-2">
+          <div className="flex justify-center gap-2">
             <span className="h-2.5 w-2.5 rounded-full bg-primary-400" />
-            <span className="h-2.5 w-2.5 rounded-full bg-gray-600" />
-            <span className="h-2.5 w-2.5 rounded-full bg-gray-600" />
+            <span className="h-2.5 w-2.5 rounded-full border border-gray-600 bg-transparent" />
+            <span className="h-2.5 w-2.5 rounded-full border border-gray-600 bg-transparent" />
           </div>
         </div>
       </div>
@@ -109,15 +105,15 @@ export default function LoginPage() {
             type="button"
             className="flex items-center gap-1.5 rounded-lg border border-gray-300 px-3 py-1.5 text-body-sm text-text-black transition-colors hover:bg-gray-50"
           >
-            <Globe className="h-4 w-4" />
+            <Languages className="h-4 w-4" />
             EN
           </button>
         </div>
 
         {/* Form area */}
         <div className="flex flex-1 flex-col justify-center px-8 lg:px-16">
-          <div className="mx-auto w-full max-w-md">
-            <h1 className="mb-2 text-center text-h4 font-bold text-text-black lg:text-h3">
+          <div className="mx-auto w-full max-w-xl">
+            <h1 className="mb-2 text-center text-xl md:text-h4 font-bold text-text-black lg:text-h3">
               Login To Your Account
             </h1>
             <p className="mb-10 text-center text-body-sm text-text-subtitle">
@@ -180,7 +176,7 @@ export default function LoginPage() {
                 Don&apos;t have an account?{" "}
                 <Link
                   href="/register"
-                  className="font-medium text-primary-600 underline underline-offset-2 hover:text-primary-700"
+                  className="font-medium text-blue-600 underline underline-offset-2 hover:text-blue-700"
                 >
                   Create Account
                 </Link>
