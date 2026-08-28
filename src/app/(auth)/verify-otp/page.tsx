@@ -108,7 +108,7 @@ export default function VerifyOtpPage() {
         </div>
 
         {/* Illustration */}
-        <div className="w-full max-w-4xl px-8">
+        <div className="w-full max-w-3xl px-8">
           <Image src={loginImage} width={400} height={800} alt="OTP Illustration" className="w-full h-auto" />
         </div>
 
